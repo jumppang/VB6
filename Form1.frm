@@ -9,6 +9,22 @@ Begin VB.Form Form1
    ScaleHeight     =   6465
    ScaleWidth      =   10305
    StartUpPosition =   3  'Windows Default
+   Begin VB.Data Data1 
+      Caption         =   "Data1"
+      Connect         =   "Access"
+      DatabaseName    =   ""
+      DefaultCursorType=   0  'DefaultCursor
+      DefaultType     =   2  'UseODBC
+      Exclusive       =   0   'False
+      Height          =   735
+      Left            =   960
+      Options         =   0
+      ReadOnly        =   0   'False
+      RecordsetType   =   1  'Dynaset
+      RecordSource    =   ""
+      Top             =   5400
+      Width           =   3375
+   End
    Begin VB.CommandButton Command1 
       Caption         =   "Command1"
       Height          =   615
@@ -24,7 +40,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
-Private Sub Command1_Click()
+Sub Command1_Click()
   
     'On Error GoTo aaa_label
     On Error Resume Next
@@ -34,7 +50,7 @@ Private Sub Command1_Click()
     
     If Err.Number <> 0 Then
     
-        MsgBox fnTest1()
+        MsgBox gCC
                 
     End If
     
