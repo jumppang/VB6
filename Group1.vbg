@@ -1,0 +1,4 @@
+VBGROUP 5.0
+StartupProject=exam1\Project1.vbp
+Project=ActiveXTest\ActiveXTest.vbp
+Project=ActiveXControlTest\ActiveXControlTest.vbp
