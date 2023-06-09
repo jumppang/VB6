@@ -27,7 +27,7 @@ Public Function OraConnOpen() As Boolean
     
     Set Conn = New ADODB.Connection
     
-    Conn.Open "Provider=OraOLEDB.Oracle;dbq=J-X44:1521;Database=XE;User Id=ot;Password=360512;"
+    Conn.Open conString
     
     On Error GoTo 0
     
@@ -40,7 +40,7 @@ ConnectError:
     MsgBox Err.Description
 End Function
 
-Public Function RunSql(nSql As String) As Boolean
+Public Function SqlTran(nSql As String) As Boolean
     
     On Error GoTo ErrSql
     Set Rs = Conn.Execute(nSql)
@@ -55,10 +55,10 @@ ErrSql:
         
 End Function
 
-Public Function RunSql1(nSql As String, nRs As ADODB.Recordset) As Boolean
+Public Function SqlSelect(nSql As String, nRs As ADODB.Recordset) As Boolean
     
     On Error GoTo ErrSql
-    nRs.Open nSql, Conn, adOpenDynamic, , adCmdText
+    nRs.Open nSql, Conn, 1, , 1
     
     On Error GoTo 0
     

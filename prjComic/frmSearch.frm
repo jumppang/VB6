@@ -3,21 +3,21 @@ Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form frmSearch 
    Caption         =   "Form1"
-   ClientHeight    =   10320
-   ClientLeft      =   105
-   ClientTop       =   435
-   ClientWidth     =   9435
+   ClientHeight    =   10322
+   ClientLeft      =   104
+   ClientTop       =   429
+   ClientWidth     =   9438
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10320
-   ScaleWidth      =   9435
+   ScaleHeight     =   10322
+   ScaleWidth      =   9438
    StartUpPosition =   3  'Windows Default
    Begin MSAdodcLib.Adodc adoSearch 
       Height          =   392
       Left            =   2772
       Top             =   9576
       Width           =   5558
-      _ExtentX        =   9790
-      _ExtentY        =   714
+      _ExtentX        =   9801
+      _ExtentY        =   719
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -47,8 +47,8 @@ Begin VB.Form frmSearch
       RecordSource    =   ""
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "Arial"
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -77,7 +77,6 @@ Begin VB.Form frmSearch
       Height          =   518
       Left            =   3654
       TabIndex        =   7
-      Text            =   "Text1"
       Top             =   5418
       Width           =   5180
    End
@@ -131,19 +130,20 @@ Begin VB.Form frmSearch
       Width           =   1652
    End
    Begin MSDataGridLib.DataGrid dgGrid 
+      Bindings        =   "frmSearch.frx":0000
       Height          =   4550
       Left            =   378
       TabIndex        =   0
       Top             =   252
       Width           =   8834
-      _ExtentX        =   15584
-      _ExtentY        =   8017
+      _ExtentX        =   15575
+      _ExtentY        =   8027
       _Version        =   393216
       HeadLines       =   1
       RowHeight       =   15
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "Arial"
+         Size            =   8.1509
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -151,8 +151,8 @@ Begin VB.Form frmSearch
          Strikethrough   =   0   'False
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "Arial"
+         Size            =   8.1509
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -200,8 +200,6 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private dao As CDao
-
 
 Private Sub btnExit_Click()
     Unload Me
@@ -213,14 +211,7 @@ Private Sub btnSearch_Click()
     
     def = "Select * From EMPLOYEES "
     
-    If Not dao.OraConnOpen Then
-        MsgBox "Con Error"
-        
-        Exit Sub
-    End If
-    
-    
-    adoSearch.CommandType = adCmdUnknown
+    adoSearch.CommandType = 8
     
     If optTitle.Value = True Then
         
@@ -239,10 +230,11 @@ End Sub
 
 Private Sub Form_Initialize()
 
-    Set dao = New CDao
-    Me.adoSearch.ConnectionString = dao.LPCONSTRING
+    'Set dao = New CDao
+    Me.adoSearch.ConnectionString = moDao.CONSTRING
     'Me.adoSearch.Visible = False
        
+    Me.adoSearch.RecordSource = "EMPLOYEES"
 End Sub
 
 

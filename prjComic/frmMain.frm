@@ -3,12 +3,12 @@ Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form frmMain 
    Caption         =   "Form1"
-   ClientHeight    =   8730
-   ClientLeft      =   105
-   ClientTop       =   435
+   ClientHeight    =   8736
+   ClientLeft      =   104
+   ClientTop       =   429
    ClientWidth     =   11895
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8730
+   ScaleHeight     =   8736
    ScaleWidth      =   11895
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton btnExit 
@@ -33,14 +33,14 @@ Begin VB.Form frmMain
       TabIndex        =   2
       Top             =   3042
       Width           =   8775
-      _ExtentX        =   15478
-      _ExtentY        =   6218
+      _ExtentX        =   15480
+      _ExtentY        =   6206
       _Version        =   393216
       HeadLines       =   1
       RowHeight       =   15
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "Arial"
+         Size            =   8.1509
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -48,8 +48,8 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "Arial"
+         Size            =   8.1509
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -96,8 +96,8 @@ Begin VB.Form frmMain
       Left            =   468
       Top             =   1053
       Width           =   8775
-      _ExtentX        =   15478
-      _ExtentY        =   847
+      _ExtentX        =   15480
+      _ExtentY        =   839
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -127,8 +127,8 @@ Begin VB.Form frmMain
       RecordSource    =   ""
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "Arial"
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -168,7 +168,6 @@ Attribute VB_Exposed = False
 
 Option Explicit
 
-Private dao As CDao
 
 Private Sub btnExit_Click()
     Unload Me
@@ -181,20 +180,17 @@ End Sub
 Private Sub Form_Initialize()
     'txtWriter.Item.DataSource = "adoComic"
     'txtWriter.Item.DataField = "FIRST_NAME"
-    
-    Set dao = New CDao
-    
 End Sub
 
 Private Sub Form_Load()
     Dim def As String
     Dim query As String
     
-    Set dao = New CDao
+    'Set dao = New CDao
     
     query = "Select * From EMPLOYEES"
     
-    adoComic.ConnectionString = dao.LPCONSTRING
+    adoComic.ConnectionString = moDao.CONSTRING
     adoComic.RecordSource = query
     
 End Sub
