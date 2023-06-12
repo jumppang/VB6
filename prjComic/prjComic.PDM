@@ -19,12 +19,15 @@ ODBCDirect=
 
 [Package|Standard Setup Package 1|Missing Dependency Information]
 C:\Windows\System32\msderun.dll=
+C:\Windows\SysWOW64\msderun.dll=
 
 [Package|Standard Setup Package 1|Out-of-Date Dependency Information]
 
 [Package|Standard Setup Package 1|Files Added]
 
 [Package|Standard Setup Package 1|Files Removed]
+c:\program files (x86)\common files\microsoft shared\dao\dao360.dll=
+c:\program files (x86)\microsoft visual studio\vb98\wizards\pdwizard\redist\mdac_typ.exe=
 
 [Package|Standard Setup Package 1|Files In Project]
 D:\Project\temp\prjComic.exe=Yes
@@ -34,7 +37,7 @@ C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEP
 C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
 C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
 C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
-C:\Program Files (x86)\Common Files\Microsoft Shared\DAO\dao360.dll=Yes
+C:\Program Files (x86)\Common Files\Microsoft Shared\DAO\dao360.dll=No
 C:\Windows\System32\msjet40.dll=Yes
 C:\Windows\System32\msjter40.dll=Yes
 C:\Windows\System32\msjint40.dll=Yes
@@ -47,16 +50,16 @@ C:\Windows\System32\msrd3x40.dll=Yes
 C:\Windows\System32\msrepl40.dll=Yes
 C:\Windows\System32\msjtes40.dll=Yes
 C:\Windows\System32\VB5DB.DLL=Yes
-C:\Windows\System32\msderun.dll=Yes
 C:\Windows\SysWOW64\MSBIND.DLL=Yes
 C:\Windows\SysWOW64\MSSTDFMT.DLL=Yes
 C:\Windows\SysWOW64\MSADODC.OCX=Yes
 C:\Windows\SysWOW64\MSDATGRD.OCX=Yes
-C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
 C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
 C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
 C:\Windows\System32\VB6STKIT.DLL=Yes
 C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Windows\SysWOW64\msderun.dll=Yes
 
 [Package|Standard Setup Package 1|Configure Registry Files]
 Applicable=No
@@ -95,6 +98,7 @@ C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$
 C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
 C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
 C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Windows\SysWOW64\msderun.dll=$(WinSysPath)
 
 [Package|Standard Setup Package 1|Configure Shared Files]
 Applicable=Yes
@@ -106,6 +110,16 @@ Type=single
 Size=
 Title=prjComic
 
+[Package|Standard Setup Package 1|Package]
+PackageFolder=D:\Project\VB6\prjComic\Package
+ProjectFolder=D:\Project\VB6\prjComic
+ServerSideCab=
+File1=D:\Project\VB6\prjComic\Package\setup.exe
+File2=D:\Project\VB6\prjComic\Package\Setup.Lst
+File3=D:\Project\VB6\prjComic\Package\prjComic.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
 [Package|Standard Setup Package 1|IconGroups]
 Group0=prjComic
 PrivateGroup0=-1
@@ -116,13 +130,3 @@ Icon1=prjComic.exe
 Title1=prjComic
 StartIn1=$(AppPath)
 Key1=Icon1
-
-[Package|Standard Setup Package 1|Package]
-PackageFolder=D:\Project\VB6\prjComic\Package
-ProjectFolder=D:\Project\VB6\prjComic
-ServerSideCab=
-File1=D:\Project\VB6\prjComic\Package\setup.exe
-File2=D:\Project\VB6\prjComic\Package\Setup.Lst
-File3=D:\Project\VB6\prjComic\Package\prjComic.CAB
-Handler1=PDWizard.FolderDplySubWiz
-Handler2=PDWizard.WebPostDplySubWiz

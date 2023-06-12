@@ -1,7 +1,6 @@
 Attribute VB_Name = "moDao"
 Option Explicit
 
-
 Public Const CONSTRING As String = "Provider=OraOLEDB.Oracle.1;Password=360512;Persist Security Info=True;User ID=ot;Data Source=X44_XE"
 'Provider=OraOLEDB.Oracle;dbq=localhost:1521/XE;Database=myDataBase;User Id=myUsername;Password=myPassword;
 Public Conn As ADODB.Connection
@@ -59,8 +58,6 @@ ErrSql:
     SqlSelect = False
     
 End Function
-
-
 
 
 
